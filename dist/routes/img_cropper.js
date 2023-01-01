@@ -14,7 +14,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
+        while (g && (g = 0, op[0] && (_ = 0)), _) try {
             if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
             if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
@@ -53,9 +53,9 @@ crop.get("/", function (req, res) { return __awaiter(void 0, void 0, void 0, fun
                 _a = req.query, filename = _a.filename, width = _a.width, height = _a.height;
                 imgDir = path_1.default.resolve("./") + "/images/";
                 outputDir = imgDir + "thumbnails/";
-                targetImage = "" + imgDir + filename + ".jpg";
+                targetImage = "".concat(imgDir).concat(filename, ".jpg");
                 if (Object.keys(req.query).length === 0) {
-                    return [2 /*return*/, res.status(200).send("Welcome to Image manipulation API endpoint, Please fill up the url like this " + link)];
+                    return [2 /*return*/, res.status(200).send("Welcome to Image manipulation API endpoint, Please fill up the url like this ".concat(link))];
                 }
                 if (!filename || !width || !height || isNaN(Number(width)) || isNaN(Number(height))) {
                     return [2 /*return*/, res.status(400).send("Error, some parameters are missing")];
@@ -69,7 +69,7 @@ crop.get("/", function (req, res) { return __awaiter(void 0, void 0, void 0, fun
                 if (!(0, filefuncs_1.fileExist)(outputDir)) {
                     (0, filefuncs_1.makeDir)(outputDir);
                 }
-                outputImage = outputDir + (filename + "-thumbnail-" + width + "x" + height + ".jpg");
+                outputImage = outputDir + "".concat(filename, "-thumbnail-").concat(width, "x").concat(height, ".jpg");
                 if (!(0, filefuncs_1.fileExist)(outputImage)) return [3 /*break*/, 1];
                 res.sendFile(outputImage);
                 return [3 /*break*/, 4];

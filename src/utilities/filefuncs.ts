@@ -5,7 +5,7 @@ const makeDir = (dirLocation: string): void => {
   return mkdirSync(dirLocation);
 };
 
-// synchronously check for file existence
+// check if the fileName contain extention
 const checkExt = (fileName: string): boolean => {
   return fileName.includes(".jpg" || ".png" || ".gif" || ".jpeg");
 };

@@ -7,7 +7,7 @@ var makeDir = function (dirLocation) {
     return (0, fs_1.mkdirSync)(dirLocation);
 };
 exports.makeDir = makeDir;
-// synchronously check for file existence
+// check if the fileName contain extention
 var checkExt = function (fileName) {
     return fileName.includes(".jpg" || ".png" || ".gif" || ".jpeg");
 };

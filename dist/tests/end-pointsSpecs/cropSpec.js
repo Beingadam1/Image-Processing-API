@@ -14,7 +14,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
+        while (g && (g = 0, op[0] && (_ = 0)), _) try {
             if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
             if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
@@ -43,47 +43,43 @@ var supertest_1 = __importDefault(require("supertest"));
 var index_1 = __importDefault(require("../../index"));
 var request = (0, supertest_1.default)(index_1.default);
 describe("Test the crop endpoint for missing parameters", function () {
-    it("test the crop route for a missing filename", function (done) { return __awaiter(void 0, void 0, void 0, function () {
+    it("test the crop route for a missing filename", function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
-            request.get("/crop?width=500&height=300").expect(400, done);
+            request.get("/crop?width=500&height=300").expect(400);
             return [2 /*return*/];
         });
     }); });
-    it("test the crop route for a missing width", function (done) { return __awaiter(void 0, void 0, void 0, function () {
+    it("test the crop route for a missing width", function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
-            request.get("/crop?filename=fjord&height=400").expect(400, done);
+            request.get("/crop?filename=fjord&height=400").expect(400);
             return [2 /*return*/];
         });
     }); });
-    it("test the crop route for full filename", function (done) { return __awaiter(void 0, void 0, void 0, function () {
+    it("test the crop route for full filename", function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
-            request.get("/crop?filename=fjord.jpg&width=300&height=300").expect(400, done);
-            done();
+            request.get("/crop?filename=fjord.jpg&width=300&height=300").expect(400);
             return [2 /*return*/];
         });
     }); });
-    it("test the crop route for a missing height", function (done) { return __awaiter(void 0, void 0, void 0, function () {
+    it("test the crop route for a missing height", function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
-            request.get("/crop?filename=fjord&width=400").expect(400, done);
-            done();
+            request.get("/crop?filename=fjord&width=400").expect(400);
             return [2 /*return*/];
         });
     }); });
 });
 describe("Test the crop endpoint for a missing resource", function () {
-    it("test the crop route for missing filename", function (done) { return __awaiter(void 0, void 0, void 0, function () {
+    it("test the crop route for missing filename", function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
-            request.get("/crop?filename=8eqR39r5cd&width=400&height=500").expect(404, done);
-            done();
+            request.get("/crop?filename=8eqR39r5cd&width=400&height=500").expect(404);
             return [2 /*return*/];
         });
     }); });
 });
 describe("Test the crop endpoint with correct parameter", function () {
-    it("test the crop route for correct filename", function (done) { return __awaiter(void 0, void 0, void 0, function () {
+    it("test the crop route for correct filename", function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
-            request.get("/crop?filename=fjord&width=100&height=500").expect(200, done);
-            done();
+            request.get("/crop?filename=fjord&width=100&height=500").expect(200);
             return [2 /*return*/];
         });
     }); });

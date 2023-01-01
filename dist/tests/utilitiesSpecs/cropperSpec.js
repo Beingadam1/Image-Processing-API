@@ -39,18 +39,22 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var supertest_1 = __importDefault(require("supertest"));
-var index_1 = __importDefault(require("../../index"));
-var request = (0, supertest_1.default)(index_1.default);
-describe("Test main endpoint", function () {
-    it("test the response of the root router", function () { return __awaiter(void 0, void 0, void 0, function () {
-        var response;
+/* eslint-disable prettier/prettier */
+// eslint-disable-next-line prettier/prettier
+var path_1 = __importDefault(require("path"));
+var cropper_1 = __importDefault(require("../../utilities/cropper"));
+describe("Test image cropping using Sharp", function () {
+    it("should get the cropped image with the specified width and height", function () { return __awaiter(void 0, void 0, void 0, function () {
+        var file, output;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.get("/")];
+                case 0:
+                    file = path_1.default.join(__dirname, "../", "../", "../", "images", "fjord.jpg");
+                    output = path_1.default.join(__dirname, "../", "../", "../", "images", "thumbnails/", "fjord-thumbnails-200x200.jpg");
+                    return [4 /*yield*/, (0, cropper_1.default)(file, output, 200, 200)];
                 case 1:
-                    response = _a.sent();
-                    expect(response.status).toBe(200);
+                    _a.sent();
+                    expect(output).toBeTruthy();
                     return [2 /*return*/];
             }
         });

@@ -9,5 +9,5 @@ var app = (0, express_1.default)();
 var port = 4000;
 app.use("/", router_1.default);
 // eslint-disable-next-line no-console
-app.listen(port, function () { return console.log("Server running on port:" + port); });
+app.listen(port, function () { return console.log("Server running on port:".concat(port)); });
 exports.default = app;

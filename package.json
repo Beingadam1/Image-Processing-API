@@ -4,6 +4,7 @@
   "description": "Image Manipulation API",
   "main": "index.js",
   "scripts": {
+    "prettier": "prettier --config .prettierrc src/**/*.ts --write",
     "nodemon": "nodemon src/index.ts",
     "lint": "eslint src/**/*.ts",
     "build": "npx tsc",
